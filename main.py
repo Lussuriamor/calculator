@@ -41,3 +41,62 @@ def calculator():
 
 if __name__ == "__main__":
     calculator()
+
+
+weight = float(input("ваш вес:"))
+hight = float(input("ваш рост:"))
+bmi = weight/(hight/100)**2
+print(bmi)
+if bmi <18.5:
+    print("ниже обычного")
+elif bmi <24.9:
+    print("нормальный")
+elif bmi <29.9:
+    print("выше обычного")
+elif bmi <34.9:
+    print("на грани ожирения")
+else:
+    print("ОЖИРЕНИЕ")
+
+
+
+def mark(percent):
+    if percent >=90:
+        return 'A'
+    elif percent >= 75:
+        return 'B'  
+    elif percent >= 65:
+        return 'C'  
+    elif percent >= 50:
+        return 'D'  
+    else:
+        return 'F'  
+percent = float(input("ваш процент?: "))
+grade = mark(percent)
+print(f"Ваша оценка: {grade}")
+
+
+
+
+import random
+
+def gameofnumbers():
+    
+    numbergame = random.randint(1, 100)
+
+    print("Угадай число от 1 до 100:")
+
+    while True:
+        guess = float(input("Гадай: "))
+
+        if guess == numbergame:
+            print(f"КРАСАВЧИК! {numbergame}!")
+            break
+        elif abs(numbergame - guess) <= 10:
+            print("Горячо!")
+        elif abs(numbergame - guess) <= 20:
+            print("Тепло!")
+        else:
+            print("Холодно!")
+
+gameofnumbers()
